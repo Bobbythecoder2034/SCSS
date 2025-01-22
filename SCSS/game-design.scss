@@ -1,0 +1,35 @@
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
+header{
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+section{
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+article{
+    width: 30%;
+    padding: 15px;
+    border: 1px solid #ddd;
+}
+img{
+    max-width: 100px;
+    height: auto;
+}
+footer{
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
