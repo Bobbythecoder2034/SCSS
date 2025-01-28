@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Countdown Timer</title>
+    <link rel="stylesheet" href="./SCSS/countdown.css">
+</head>
+<body>
+    <h1>Countdown Timer</h1>
+    <main>
+        <div id="input-container"></div>
+        
+            <input type="text" id="name" placeholder="Enter a day">
+            <input type="datetime-local" id="date">
+            <button onclick="updateCountdown()">Add Timer</button>
+        </div>    
+    </main>
+    
+    <div id="timer"></div>
+    <script>
+        const timers = [];
+        //Set the target data and time
+        const main = createAndAppend("main", document.body, {class:"site-main"})
+        
+
+        //Function to calculate and display the countdown timer
+        function updateCountdown(timer){
+            const now = new Date();
+            const timeDifference = timer.targetDate - now; //Difference IN MILLISECONDS between current date and target date
+            if(timeDifference <= 0){
+                document.getElementById("timer").innerHTML = "The end is nye!!!!";
+                clearInterval(intervalID); //Stop the timer when the target is reached
+                return;
+            }
+            console.log(targetDate)
+            console.log(timeDifference)
+        
+        //Calcultae the days, hours, minutes, seconds
+        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000*60*60));
+        const minutes = Math.floor((timeDifference % (1000*60*60)) / (1000*60))
+        const seconds = Math.floor((timeDifference % (1000*60)) / 1000);
+
+        document.getElementById("timer").innerText = `Days: ${days}, Hours: ${hours}, Minutes: ${minutes}, Seconds: ${seconds}`;
+
+        const intervalID = setInterval(updateCountdown, 1000);
+    }
+    //Start the timer
+    function newEvent(){
+        const timer = {
+            event: getElementById("name").value,
+            date: getElementById("date").value,
+            element: createAndAppend("div", main, {class:"timer"}),
+            intervalID: setInterval(()=>updateCountdown(timer),1000),
+    }
+    timers.push(timer);
+    }
+
+    //Call the function once immediatly to avoid initial delay.
+    updateCountdown();
+
+    const createAndAppend = (tag, parent, attributes = {}, content ="")=>{
+        const element = document.createElement(tag);
+        Object.keys(attributes).forEach(key=>element.setAttribute(key,attributes[key]));//(backgroundColor, "Pink") changes for each new element to add every attribute to the element
+        //looks at the attributes and sets attributes to the name in key and its then given the value
+        
+        element.innerHTML = content;
+        parent.appendChild(element);
+        return element;
+    }
+
+    </script>
+</body>
+</html>
