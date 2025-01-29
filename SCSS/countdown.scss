@@ -6,14 +6,8 @@ body{
 
 }
 
-#timer{
-    font-size: 1rem;
-    color: #333;
-    margin-top: 20px;
-    border: black 4px solid;
-    background-color: rgb(176, 17, 17);
-}
-.timer{
+
+div{
     font-size: 1rem;
     color: #333;
     margin-top: 20px;
@@ -41,4 +35,8 @@ main{
     flex-direction: column-reverse;
     width: 30%;
     margin-left: 35%;
+}
+#input-container{
+    background-color: rgb(20, 96, 140);
+    color: black;
 }

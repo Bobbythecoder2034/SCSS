@@ -9,11 +9,14 @@
 <body>
     <h1>Countdown Timer</h1>
     
-        <div id="input-container"></div>
-        
+        <div id="input-container">
             <input type="text" id="name" placeholder="Enter a day">
             <input type="datetime-local" id="date">
             <button onclick="newEvent()">Add Timer</button>
+
+        </div>
+        
+            
         </div>  
         <div id="timerContainer"></div>  
     <main>
@@ -37,15 +40,15 @@
 
 
    function newEvent(){
-
-        const newTimer = createAndAppend('div', document.body, {class:"timer"})
-        newTimer.innerHTML=
-        `
+        const name = document.getElementById("name").innerHTML
+        const newTimer = createAndAppend('div', document.body, {class:"timer"},`
         <div>
             <h2>${document.getElementById("name").value}</h2>
             <div id="currentTimer">...calc</div>
         </div>
-        `
+        `)
+        // newTimer.innerHTML=
+        
         const timer = {
                     event: document.getElementById("name").value,
                     targetDate: new Date(document.getElementById("date").value),
@@ -67,14 +70,16 @@
 
 
         //Function to calculate and display the countdown timer
-        function updateCountdown(timer){
-            const tomorrow = timer.targetDate
+        function updateCountdown(current){
+            const tomorrow = current.targetDate
+            console.log(typeof tomorrow)
             const now = new Date();
 
             const timeDifference = tomorrow - now; //Difference IN MILLISECONDS between current date and target date
             if(timeDifference <= 0){
-                timer.timerElement.innerHTML = "The end is nye!!!!";
-                clearInterval(timer.intervalID); //Stop the timer when the target is reached
+                current.timerElement.innerHTML = "The end is nye!!!!";
+                clearInterval(current.intervalID); //Stop the timer when the target is reached
+                
                 return;
             }
 //Uncaught TypeError: Cannot read properties of undefined (reading 'targetDate')
@@ -85,11 +90,11 @@
         const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000*60*60));
         const minutes = Math.floor((timeDifference % (1000*60*60)) / (1000*60))
         const seconds = Math.floor((timeDifference % (1000*60)) / 1000);
-
-        timer.timerElement.innerText = `Days: ${days}, Hours: ${hours}, Minutes: ${minutes}, Seconds: ${seconds}`;
+            console.log(current.timerElement.querySelector("#currentTimer"))
+        current.timerElement.querySelector("#currentTimer").innerText = `Days: ${days}, Hours: ${hours}, Minutes: ${minutes}, Seconds: ${seconds}`;
 
         
-        const intervalID = setInterval(updateCountdown, 1000);
+
     }
 
     
