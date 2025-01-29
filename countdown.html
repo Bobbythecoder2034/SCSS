@@ -79,7 +79,8 @@
             if(timeDifference <= 0){
                 current.timerElement.innerHTML = "The end is nye!!!!";
                 clearInterval(current.intervalID); //Stop the timer when the target is reached
-                
+                //setTimeout, then add class that has invisibility
+                current.timerElement.classList.add("invisible")
                 return;
             }
 //Uncaught TypeError: Cannot read properties of undefined (reading 'targetDate')
