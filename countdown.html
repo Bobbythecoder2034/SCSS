@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom Countdown Timer</title>
-    <link rel="stylesheet" href="./SCSS/countdown.css">
+    <link rel="stylesheet" href="./countdown.css">
 </head>
 <body>
     <h1>Countdown Timer</h1>
@@ -12,7 +12,7 @@
         <div id="input-container">
             <input type="text" id="name" placeholder="Enter a day">
             <input type="datetime-local" id="date">
-            <button onclick="newEvent()">Add Timer</button>
+            <button onclick="newEvent()" id="submitter">Add Timer</button>
 
         </div>
         
@@ -39,6 +39,8 @@
 
    function newEvent(){
         const name = document.getElementById("name").innerHTML
+        
+        
         const newTimer = createAndAppend('div', document.body, {class:"timer"},`
         <div>
             <h2>${document.getElementById("name").value}</h2>
@@ -54,12 +56,12 @@
                     intervalID: setInterval(()=>updateCountdown(timer),1000),
             }
         
-    
+        
     timers.push(timer);
     
     console.log(timers)
     updateCountdown(timer);
-
+        
     }
 
 
@@ -72,8 +74,8 @@
             const tomorrow = current.targetDate
             console.log(typeof tomorrow)
             const now = new Date();
-
-            const timeDifference = tomorrow - now; //Difference IN MILLISECONDS between current date and target date
+           
+                const timeDifference = tomorrow - now; //Difference IN MILLISECONDS between current date and target date
             if(timeDifference <= 0){
                 current.timerElement.innerHTML = "The end is nye!!!!";
                 clearInterval(current.intervalID); //Stop the timer when the target is reached
@@ -93,14 +95,9 @@
 
         
 
+            
+            
     }
-
-    
-
-
-    
-
-
     </script>
 </body>
 </html>
