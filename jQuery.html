@@ -6,6 +6,12 @@
     <title>jQuery</title>
     <link rel="stylesheet" href="jQuery.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <style>
+        .darkMode{
+            background-color: black;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     
@@ -59,12 +65,34 @@
 
     <script>
         $(document).ready(function(){
-            
-        });
 
+        
+        $("#button").click(function(){
+            // $("#panel1").fadeOut(1000).fadeIn(1000);
+            // $(this).css("background-color","blue")
+            $('#panel1').toggleClass("darkMode").fadeOut(3000).fadeIn(2000);
+        });
+        $("#button2").click(function(){
+            $("#panel2").fadeTo(100, 0.2).fadeTo(2000,.8).delay(1000).fadeTo(100, 1);
+        });
+        $("#button3").click(function(){
+            // $("#panel3").animate({
+            //     "width":"300px",
+            //     "height":"300px",
+            //     "overflow":"hidden",
+            // }, 5000)
+            $("#panel3").slideUp(1000).delay(1000).slideDown(1500)
+        });
+        $("#button4").click(function(){
+            // $("#panel4").slideDown(2000).slideUp(400)
+            $("#panel4").animate({opacity:0.3}, 1000).slideUp(2000).slideDown(2000).animate({opacity:0.1}, 2000).animate({opacity:1}, 2000)
+        });
         // $(function(){
         //     $("#panel1").hide(1000);
         // });
+        
+
+        });
     </script>
 </body>
 </html>
