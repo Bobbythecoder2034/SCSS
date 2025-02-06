@@ -14,22 +14,23 @@
     </style>
 </head>
 <body>
-    
-    <div class="container">
-        <div class="header">
+    <div class="header">
             <h1>This is jQuery</h1>
             <button id="button">#button1</button>
             <button id="button2">#button2</button>
             <button id="button3">#button3</button>
             <button id="button4">#button4</button>
         </div>
-    </div>
+    <div class="container">
+        
+    
 
     <div class="row">
         <div class="col-xs-3">
             <div id="panel1" class="panel panel-primary">
                 <div class="panel-heading">#panel1</div>
-                <div class="panel-body">#panel1-content</div>
+                <div class="panel1-body">#panel1-content</div>
+                <div class="panel1-text">the background is blue and the text is white</div>
             </div>
         </div>
     </div>
@@ -38,7 +39,8 @@
         <div class="col-xs-3">
             <div id="panel2" class="panel panel-primary">
                 <div class="panel-heading">#panel2</div>
-                <div class="panel-body">#panel2-content</div>
+                <div class="panel2-body">#panel2-content</div>
+                <div class="panel2-text">the background is green and the text is white and the font is bold</div>
             </div>
         </div>
     </div>
@@ -47,7 +49,8 @@
         <div class="col-xs-3">
             <div id="panel3" class="panel panel-primary">
                 <div class="panel-heading">#panel3</div>
-                <div class="panel-body">#panel3-content</div>
+                <div class="panel3-body">#panel3-content</div>
+                <div class="panel3-text">the background is darkgrey and the text is black and the font family is monospace, including the panel content</div>
             </div>
         </div>
     </div>
@@ -55,12 +58,13 @@
     <div class="row">
         <div class="col-xs-3">
             <div id="panel4" class="panel panel-primary">
-                <div class="panel-heading">#panel4</div>
-                <div class="panel-body">#panel4-content</div>
+                <div class="panel4-heading">#panel4</div>
+                <div class="panel4-body">#panel4-content</div>
+                <div class="panel4-text">the panel is white with black text, the heading is blue with white text and underlined with bold text, the content is red with white text and serif font</div>
             </div>
         </div>
     </div>
-    
+</div>
     
 
     <script>
@@ -90,8 +94,77 @@
         // $(function(){
         //     $("#panel1").hide(1000);
         // });
-        
-
+        $(".header").css({
+            'width':'auto',
+            'height':'8rem',
+            'text-align': 'center',
+            'background-color':'grey',
+            'padding-top':'.5rem'
+        });
+        $("button").css({
+            'margin-top':'0',
+            'height':'40px',
+            'font-weight':'700',
+            'background-image': 'linear-gradient(grey,white)'
+        });
+        $("h1").css({
+            'margin-bottom':'0'
+        });
+        $(".container").css({
+            'display':'flex',
+            'justify-content':'space-between',
+        });
+        $(".panel").css({
+            'margin':'2rem',
+            'width':'14rem',
+            'height':'10rem',
+            
+            'border':'blue, 3px, solid'
+        })
+        $("#panel1").css({
+            'background-color': 'blue',
+            'color':'white',
+        })
+        $(".panel1-body").css({
+            'background-color':'DeepSkyBlue',
+            'color':'white',
+            'font-weight':'600',
+            'height':'40px'
+        })
+        $(".panel2-body").css({
+            'background-color':'DeepSkyBlue',
+            'color':'white',
+            'font-weight':'600',
+            'height':'40px'
+        })
+        $(".panel3-body").css({
+            'background-color':'DeepSkyBlue',
+            'color':'white',
+            'font-weight':'600',
+            'height':'40px'
+        })
+        $(".panel4-body").css({
+            'background-color':'blue',
+            'color':'white',
+            'text-decoration':'underline',
+            'font-weight':'600',
+            'height':'40px'
+        })
+        $("#panel2").css({
+            'background-color': 'green',
+            'color':'white',
+            'font-weight':'700'
+        })
+        $("#panel3").css({
+            'background-color': 'darkgrey',
+            'font-family':'monospace'
+        })
+        $("#panel4").css({
+            'background-color': 'red',
+        })
+        $(".panel4-heading").css({
+            'background-color':'white'
+        });
         });
     </script>
 </body>
