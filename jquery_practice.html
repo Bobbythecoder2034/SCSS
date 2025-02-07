@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <style>
+        .dark{
+            background-color: black;
+            color: white;
+            
+        }
+    </style>
+
+</head>
+<body>
+    <div><img src="https://res-console.cloudinary.com/db9mdr0ae/thumbnails/v1/image/upload/v1738891199/SU1HXzAwMjgtNWJmZWExYWU4ZDMxZV9fODgwX3l2b2J2bg==/drilldown" alt="hegdehog"></div>
+
+    <button>Dark Mode</button>
+
+    <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi expedita eius laudantium, fugiat sed dolore impedit, explicabo vel facere exercitationem totam, minus porro delectus! Veritatis debitis dolore distinctio harum corrupti. Nemo quas doloribus, quasi eos fuga inventore alias numquam ipsa. Eaque eligendi tempora id quasi ducimus ut sequi enim? A.</p>
+
+    Guess the best lowercase letter: <input type="text">
+
+    <script>
+        //ensures the document is ready
+        $(document).ready(function(){
+            // hides the div for an initial suprise
+            $("div").slideUp(100)
+            //This function asks the user to guess the right key, then gives them a suprise
+            $("input").keydown(function(event){ // event listener 1
+                if(event.key === 'w'){
+                    $("div").slideUp(100).slideDown(3000).animate({opacity:0.5}, 500).animate({opacity:1}, 500)// chaining 1 and jQuery effect (.animate())
+                }
+            
+        });
+        //These two functions allow the use to toggle dark mode when they want to.
+            $("button").click(function(){ //event listener 2
+                $("body").addClass("dark")
+            })
+            $("button").dblclick(function(){ //event listener 3
+                $("body").removeClass("dark")
+            })
+
+
+        });
+    </script>
+</body>
+</html>

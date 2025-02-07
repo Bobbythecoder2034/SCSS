@@ -66,16 +66,16 @@
     </div>
 </div>
     
-Enter name: <input type="text" id="text-input">
+
     <script>
         $(document).ready(function(){
 
         
-        // $("#button").click(function(){
-        //     // $("#panel1").fadeOut(1000).fadeIn(1000);
-        //     // $(this).css("background-color","blue")
-        //     $('#panel1').toggleClass("darkMode").fadeOut(3000).fadeIn(2000);
-        // });
+        $("#button").click(function(){
+            // $("#panel1").fadeOut(1000).fadeIn(1000);
+            // $(this).css("background-color","blue")
+            $('#panel1').toggleClass("darkMode").fadeOut(3000).fadeIn(2000);
+        });
         $("#button2").click(function(){
             $("#panel2").fadeTo(100, 0.2).fadeTo(2000,.8).delay(1000).fadeTo(100, 1);
         });
@@ -91,26 +91,6 @@ Enter name: <input type="text" id="text-input">
             // $("#panel4").slideDown(2000).slideUp(400)
             $("#panel4").animate({opacity:0.3}, 1000).slideUp(2000).slideDown(2000).animate({opacity:0.1}, 2000).animate({opacity:1}, 2000)
         });
-        $("#button").on("event", function(){})
-            //for example//
-        $("#button").on("mouseover", function(){
-            $("#panel1").fadeToggle(1000)
-        });
-        // $("#text-input").keydown($this).css({"background-color", "blue"});
-        $("#text-input").keyup(function(event){
-            $("#panel1").css({"background-color": "orange"})
-            if (event.key === 'Enter') {
-                $("#panel3").css({"background-color":"blue"})
-            }
-            if (event.which === '70') {
-                $("#panel4").css({"color":"pink"})
-            }
-
-        });
-        $("#text-input").keydown(function(){
-            $("#panel1").css({"background-color": "red"})
-        });
-
         // $(function(){
         //     $("#panel1").hide(1000);
         // });
@@ -185,20 +165,6 @@ Enter name: <input type="text" id="text-input">
         $(".panel4-heading").css({
             'background-color':'white'
         });
-        });
-
-        $("#text-input").keyup(function(event){
-            $("#panel1").css({"background-color": "orange"})
-            if (event.key === 'Enter') {
-                $("#panel3").css({"background-color":"blue"})
-            }
-            if (event.key === 'f') {
-                $("#panel4").css({"background-color":"pink"})
-            }
-
-        });
-        $("#text-input").keydown(function(){
-            $("#panel1").css({"background-color": "red"})
         });
     </script>
 </body>
