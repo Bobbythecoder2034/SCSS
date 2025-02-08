@@ -6,6 +6,9 @@
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <style>
+        body{
+            background-color: skyblue;
+        }
         .dark{
             background-color: black;
             color: white;
@@ -15,31 +18,48 @@
 
 </head>
 <body>
-    <div><img src="https://res-console.cloudinary.com/db9mdr0ae/thumbnails/v1/image/upload/v1738891199/SU1HXzAwMjgtNWJmZWExYWU4ZDMxZV9fODgwX3l2b2J2bg==/drilldown" alt="hegdehog"></div>
+    <header>
+        <h1>THE HEDGEHOG</h1>
+    </header>
+    <div class="hedgehog-holder"><img src="https://res-console.cloudinary.com/db9mdr0ae/thumbnails/v1/image/upload/v1738891199/SU1HXzAwMjgtNWJmZWExYWU4ZDMxZV9fODgwX3l2b2J2bg==/drilldown" alt="hegdehog"></div>
 
-    <button>Dark Mode</button>
+    <button class="darken">Dark Mode</button>
 
-    <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi expedita eius laudantium, fugiat sed dolore impedit, explicabo vel facere exercitationem totam, minus porro delectus! Veritatis debitis dolore distinctio harum corrupti. Nemo quas doloribus, quasi eos fuga inventore alias numquam ipsa. Eaque eligendi tempora id quasi ducimus ut sequi enim? A.</p>
+    <p>Hedgy the hedgehog is the most famous European hedgehog ever. Like many of his other bretheren, he lives in the bushes of suburban Britain. He is a well-known celbrity</p>
+    
 
-    Guess the best lowercase letter: <input type="text">
-
+    <section>Guess the best lowercase letter for a surprise: <input type="text" id="letter"></section>
+    <button class="smaller">Send Away Surprise</button>
+    <p class="begone">Hedgy went to sleep</p>
     <script>
         //ensures the document is ready
         $(document).ready(function(){
-            // hides the div for an initial suprise
-            $("div").slideUp(100)
+            //CSS for coloring
+            $("body").css({"padding":"0 25% 0 25%", "text-align":"center"})
+            $("img").css({"height":"200px", "width":"150px"})
+            $(".hedgehog-holder").css({"display":"flex", "justify-content":"center", "margin-bottom":"2rem"})
+            // hides both elements for an initial suprise
+            $(".hedgehog-holder").slideUp(1)
+            $(".begone").slideUp(1)
             //This function asks the user to guess the right key, then gives them a suprise
-            $("input").keydown(function(event){ // event listener 1
+            $("#letter").keydown(function(event){ // event listener 1
                 if(event.key === 'w'){
-                    $("div").slideUp(100).slideDown(3000).animate({opacity:0.5}, 500).animate({opacity:1}, 500)// chaining 1 and jQuery effect (.animate())
+                    $("div").animate({opacity:0.0}, 1).slideDown(3000).animate({opacity:1}, 4000)// chaining 1 and jQuery effect (.animate())
                 }
+            });
+            $(".smaller").click(function(){ // event listener 1
+                $("div").animate({opacity:0.0}, 3000).slideUp(3000)
+                $(".begone").slideDown(1000).delay(3000).animate({opacity:0.0}, 3000)
+                $(".smaller").slideUp(1000)
+                // chaining 2
             
         });
         //These two functions allow the use to toggle dark mode when they want to.
-            $("button").click(function(){ //event listener 2
+            $(".darken").click(function(){ //event listener 2
                 $("body").addClass("dark")
+                
             })
-            $("button").dblclick(function(){ //event listener 3
+            $(".dark").dblclick(function(){ //event listener 3
                 $("body").removeClass("dark")
             })
 
