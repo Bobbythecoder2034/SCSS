@@ -65,6 +65,13 @@
         </div>
     </div>
 </div>
+<div class="header">
+    <h1>This is jQuery</h1>
+    <button panelid = '1' id="button5">#button5</button>
+    <button panelid = '2' id="button6">#button6</button>
+    <button panelid = '3' id="button7">#button7</button>
+    <button panelid = '4' id="button8">#button8</button>
+</div>
     
 Enter name: <input type="text" id="text-input">
     <script>
@@ -128,7 +135,10 @@ Enter name: <input type="text" id="text-input">
                 $("#panel1").toggle(100)
                 $("#panel2").toggle(100)
             });
-
+    $("button").on('click', function(){
+        let panelId = $(this).attr('panelid');
+        $('#panel'+panelId + ' .panel-heading').html("this changed")
+    })
 
 
 
