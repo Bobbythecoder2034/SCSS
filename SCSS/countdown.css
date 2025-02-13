@@ -1,0 +1,74 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-top: 2rem;
+  background-color: #068639;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+div {
+  font-size: 1rem;
+  color: #20B677;
+  margin-top: 20px;
+  border: #46615A 2px solid;
+  background-color: #2B3330;
+}
+
+button {
+  color: #20B677;
+  background-color: #25362F;
+  height: 2rem;
+}
+
+h1 {
+  background-color: #2B3330;
+  color: #308B65;
+  text-align: center;
+  padding: 1rem;
+  font-weight: bolder;
+  height: 3rem;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: space-between;
+  flex-direction: column-reverse;
+  width: 30%;
+  margin-left: 35%;
+}
+
+#input-container {
+  background-color: #31614D;
+  color: black;
+  border: black 0px solid;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.invisible {
+  visibility: hidden;
+  position: absolute;
+}
+
+#name {
+  position: absolute;
+  top: 8.8rem;
+  height: 1rem;
+}
+
+#date {
+  position: absolute;
+  top: 10rem;
+  height: 1rem;
+}
+
+#submitter {
+  position: absolute;
+  top: 11.2rem;
+  height: 1rem;
+}/*# sourceMappingURL=countdown.css.map */
