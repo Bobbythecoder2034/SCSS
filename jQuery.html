@@ -72,8 +72,50 @@
     <button panelid = '3' id="button7">#button7</button>
     <button panelid = '4' id="button8">#button8</button>
 </div>
-    
+    <div class="row">
+        <ul class="list">
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+            <ul class="sublist">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </ul>
+        <ul class="list">
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+            <ul class="sublist">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </ul>
+        <ul class="list">
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+            <ul class="sublist">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </ul>
+        <ul class="list">
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+            <ul class="sublist">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </ul>
+    </div>
 Enter name: <input type="text" id="text-input">
+
     <script>
         $(document).ready(function(){
 
@@ -218,7 +260,7 @@ Enter name: <input type="text" id="text-input">
         $(".panel4-heading").css({
             'background-color':'white'
         });
-        });
+        
 
         $("#text-input").keyup(function(event){
             $("#panel1").css({"background-color": "orange"})
@@ -228,11 +270,26 @@ Enter name: <input type="text" id="text-input">
             if (event.key === 'f') {
                 $("#panel4").css({"background-color":"pink"})
             }
-
+            
         });
         $("#text-input").keydown(function(){
             $("#panel1").css({"background-color": "red"})
         });
+
+        $("input:hover").css({"background-color":"blue"})
+        $("button:nth-of-type(2)").css({"background-image":"none"})
+        $("button:nth-of-type(2)").css({"background-color":"pink"})
+        $("div:first-child").css({"background-color":"orange"})
+
+        console.log($('ul').eq(1).children())
+
+        $('li').on('click',function(){
+            $('li').removeClass('highlight')
+            $(this).addClass('highlight')
+            
+        })
+
+    });
     </script>
 </body>
 </html>
