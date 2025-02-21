@@ -1,5 +1,6 @@
 $(document).ready(function(){
     let mode = 1;
+    var captions = ["Grizzly Bear", "Polar Bear", "Sloth Bear", "Panda Bear", "Sun Bear", "Black Bear"]
     //toggles the dark mode class and changes the text
     $('#dark-mode').on('click', function(){
         $("*").toggleClass("darken")
@@ -21,6 +22,7 @@ let temp = 0
         let analyzingID = $(this).attr('thumbnailID');
         $('.number'+analyzingID).fadeIn(1000)
         temp = analyzingID
+        $('.captions').html(captions[temp-1])
     })
 
     //keyboard navigation
@@ -44,4 +46,9 @@ let temp = 0
             $('.number'+temp).fadeIn(1000)
         }
     })
+    $(".thumbnail").on('hover', function(){
+        $(this).toggleClass('selected')
+    })
+    
+    //Have it call captions[temp] whenever the image is changed to edit the html of the captions div
 });

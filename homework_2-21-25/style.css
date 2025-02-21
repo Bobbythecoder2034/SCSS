@@ -16,6 +16,7 @@ body{
 .thumbnail{
     width: 20px;
     height: 20px;
+    padding: 3px;
 }
 .image-container{
     display: flex;
@@ -23,6 +24,14 @@ body{
     text-align: center;
     justify-content: space-around;
     height: 20rem;
+}
+.thumbnail-container{
+    display: flex;
+    gap: 4px;
+    height: 3rem;
+    padding-left: 2px;
+    padding-right: 2px;
+    justify-content: space-between;
 }
 .image-subcontainer{
     display: flex;
@@ -39,11 +48,25 @@ body{
     width: 60%;
     height: auto;
     color: black;
+    font-weight: bold;
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: lightgray;
     border: 2px dotted lightslategray;
 }
+.thumbnail:hover{
+    padding: 0;
+    border: 3.5px lightseagreen solid;
+}
 .analyzed{
     width: 100%;
+}
+.captions{
+    background-color: lightgray;
+    color: black;
+    font-weight: bolder;
+    font-size: larger;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 @media screen and (max-Width:450px){
     .image-container{
