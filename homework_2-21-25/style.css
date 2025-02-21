@@ -5,9 +5,57 @@ body{
     align-items: center;
     text-align: center;
 }
+.darken{
+    background-color: black;
+    color: white;
+}
 .small{
     width: 150px;
 }
-.big{
-    width: 400px;
+
+.thumbnail{
+    width: 20px;
+    height: 20px;
+}
+.image-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    height: 20rem;
+}
+.image-subcontainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2px;
+}
+#bear-analyzer{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 4px;
+    width: 60%;
+    height: auto;
+    color: black;
+    background-color: lightgray;
+    border: 2px dotted lightslategray;
+}
+.analyzed{
+    width: 100%;
+}
+@media screen and (max-Width:450px){
+    .image-container{
+        flex-direction: row;
+        height: auto;
+        margin: 1rem;
+        justify-content: space-around;
+    }
+    .image-subcontainer{
+        flex-direction: column;
+    }
+    .small{
+        width: 70%;
+    }
 }
