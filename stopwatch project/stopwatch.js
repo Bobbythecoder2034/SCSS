@@ -3,7 +3,7 @@ $(document).ready(function(){
     let interval;
     let hours = 0;
     let minutes = 0;
-    let seconds = 0;
+    let seconds = 50;
     let milliseconds = 0;
     let paused = true;
     function startLoop(){
@@ -26,7 +26,7 @@ $(document).ready(function(){
             console.log(`${hours}:${minutes}:${seconds}.${milliseconds}`)
             //references function farther down
             test()
-        }, 1)  
+        }, 10)  
     }
     //simple stop that pauses the timer.
     function stopLoop(){
@@ -79,8 +79,20 @@ $(document).ready(function(){
         }else if(!milTest && secTest && !minTest && !hourTest){
             $("#timer").text(`${hours}:${minutes}:0${seconds}.${milliseconds}`)
 
-        }else if(!milTest && secTest && !minTest && !hourTest){
-            $("#timer").text(`${hours}:${minutes}:0${seconds}.${milliseconds}`)
+        }else if(!milTest && !secTest && minTest && !hourTest){
+            $("#timer").text(`${hours}:0${minutes}:${seconds}.${milliseconds}`)
+
+        }else if(milTest && !secTest && !minTest && hourTest){
+            $("#timer").text(`0${hours}:${minutes}:${seconds}.0${milliseconds}`)
+
+        }else if(milTest && secTest && !minTest && hourTest){
+            $("#timer").text(`0${hours}:${minutes}:0${seconds}.0${milliseconds}`)
+
+        }else if(milTest && !secTest && minTest && !hourTest){
+            $("#timer").text(`${hours}:0${minutes}:${seconds}.0${milliseconds}`)
+
+        }else if(milTest && !secTest && minTest && hourTest){
+            $("#timer").text(`0${hours}:0${minutes}:${seconds}.0${milliseconds}`)
 
         }else if(!milTest && !secTest && !minTest && !hourTest){
             $("#timer").text(`${hours}:${minutes}:${seconds}.${milliseconds}`)
