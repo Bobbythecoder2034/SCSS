@@ -3,7 +3,7 @@ $(document).ready(function(){
     let interval;
     let hours = 0;
     let minutes = 0;
-    let seconds = 50;
+    let seconds = 0;
     let milliseconds = 0;
     let paused = true;
     function startLoop(){
@@ -103,7 +103,20 @@ $(document).ready(function(){
     }
     //Lap/Clear will only make laps when the timer is running. Even if clear is pressed while it is running, it will make a lap.
     //Once it is paused, lap and clear reset the timer to zero.
-    $(".start").on("click",startLoop)
-    $(".stop").on("click",stopLoop)
-    $(".lap").on("click",clearLap)
+    $(".start-stop").on("click",function(){
+        if(!paused){
+            stopLoop()
+            $(this).text("Start")
+            $(".lap-clear").text("Clear")
+        }else{
+            startLoop()
+            $(this).text("Stop")
+            $(".lap-clear").text("Lap")
+        }
+    })
+    $(".lap-clear").on("click",function(){
+        if(paused){
+            clearLap()
+        }
+    })
 })
