@@ -27,4 +27,46 @@ body {
 @font-face {
   font-family: "bob";
   src: url(./digital-7\ \(mono\ italic\).ttf);
+}
+.lap-container {
+  height: auto;
+  color: black;
+  list-style: none;
+}
+
+li {
+  font-family: "bob";
+  display: flex;
+  align-items: center;
+  width: auto;
+  padding: 2px;
+  color: white;
+  height: 2rem;
+  font-size: 1rem;
+  margin-top: 10px;
+  border: 1px dotted white;
+}
+
+.start-stop {
+  background-color: green;
+  height: 2rem;
+  width: 3rem;
+  font-family: "bob";
+  padding: 0;
+  border: none;
+  margin: 0.5rem;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.lap-clear {
+  background-color: red;
+  height: 2rem;
+  width: 3rem;
+  font-family: "bob";
+  padding: 0;
+  border: none;
+  margin: 0.5rem;
+  font-size: larger;
+  font-weight: bold;
 }/*# sourceMappingURL=stopwatch.css.map */

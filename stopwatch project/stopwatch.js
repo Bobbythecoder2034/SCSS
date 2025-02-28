@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
     let interval;
     let hours = 0;
@@ -6,6 +5,8 @@ $(document).ready(function(){
     let seconds = 0;
     let milliseconds = 0;
     let paused = true;
+    let laps = 0;
+    let result;
     function startLoop(){
         paused = false
         interval = setInterval(function(){
@@ -101,22 +102,37 @@ $(document).ready(function(){
 
         
     }
+ 
     //Lap/Clear will only make laps when the timer is running. Even if clear is pressed while it is running, it will make a lap.
     //Once it is paused, lap and clear reset the timer to zero.
     $(".start-stop").on("click",function(){
         if(!paused){
             stopLoop()
             $(this).text("Start")
+            $(this).css({"background-color":"green"})
             $(".lap-clear").text("Clear")
+            $(".lap-clear").css({"background-color":"red"})
         }else{
             startLoop()
             $(this).text("Stop")
+            $(this).css({"background-color":"red"})
             $(".lap-clear").text("Lap")
+            $(".lap-clear").css({"background-color":"green"})
         }
     })
+
     $(".lap-clear").on("click",function(){
         if(paused){
             clearLap()
+            //Removes all laps
+            $(".lap-container").text("")
+            laps = 0;
+        }else if(!paused){
+            laps++
+            //This access the time on the stopwatch
+            result = $("#timer").text()
+            //This adds an <li> with all the necessary information
+            $(".lap-container").append(`<li>Lap ${laps}: ${result}`)
         }
     })
 })
